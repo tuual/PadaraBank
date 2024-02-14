@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Padara</string>
+    <string name="trlInfo">Herkes tarafından sevilen mobil bankacılık</string>
+    <string name="trl">Anlık ve her zaman yapılan para transferleri, işlem geçmişini kontrol etme, sağlıklı işlem yapabilirsiniz.</string>
+    <string name="buttonText1">Devam edin</string>
+    <string name="textHint">TC Kimlik Numarası</string>
+    <string name="textHint2">Parola</string>
+    <string name="text1">Günaydın</string>
+    <string name="text2">İyi akşamlar</string>
+    <string name="buttonText2"> Giriş yap </string>
+    <string name="text3">İyi Günler</string>
+    <string name="text4">İyi Akşamlar</string>
+    <string name="textBalance">PADARA</string>
+    <string name="texthesaphareket">Detay</string>
+    <string name="textParayatir">Yatır</string>
+    <string name="textParagonder">Gönder</string>
+    <string name="textpadarano">Padara Numaran:</string>
+</resources>
