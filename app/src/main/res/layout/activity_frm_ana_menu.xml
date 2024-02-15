@@ -29,131 +29,142 @@
         android:id="@+id/tvBakiye"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="24dp"
         android:autoSizeMinTextSize="15sp"
         android:drawablePadding="10dp"
         android:fontFamily="@font/robotomedium"
         android:padding="5dp"
         android:text="00000"
+
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="30sp"
         app:autoSizeMaxTextSize="30sp"
         app:autoSizeMinTextSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView3"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/materialTextView3"
+        app:layout_constraintEnd_toEndOf="@+id/imageView3"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView3"
-        app:layout_constraintVertical_bias="0.829" />
+        app:layout_constraintStart_toStartOf="@+id/imageView3"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="20dp"
-        android:scaleType="fitStart"
+        android:layout_height="300dp"
+        android:layout_marginTop="24dp"
+        android:maxHeight="400dp"
+        android:minHeight="100dp"
         android:src="@drawable/ccpng"
-        app:layout_constraintEnd_toEndOf="@+id/tvBakiye"
-        app:layout_constraintStart_toStartOf="@+id/tvBakiye"
+        app:layout_constraintEnd_toEndOf="@+id/materialTextView2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/materialTextView2"
         app:layout_constraintTop_toBottomOf="@+id/materialTextView2" />
 
     <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/materialTextView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/white"
         android:fontFamily="@font/robotomedium"
         android:text="@string/textpadarano"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView3"
         app:layout_constraintEnd_toEndOf="@+id/tvBakiye"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="@+id/tvBakiye"
-        app:layout_constraintTop_toBottomOf="@+id/tvBakiye"
-        app:layout_constraintVertical_bias="0.246" />
+        app:layout_constraintTop_toBottomOf="@+id/tvBakiye" />
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginTop="50dp"
         android:background="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/shapeableImageView3"
-        app:layout_constraintEnd_toEndOf="@+id/shapeableImageView"
+        app:layout_constraintBottom_toTopOf="@+id/imgDetay"
+        app:layout_constraintEnd_toEndOf="@+id/imgYatir"
         app:layout_constraintHorizontal_bias="0.406"
-        app:layout_constraintStart_toStartOf="@+id/shapeableImageView2"
+        app:layout_constraintStart_toStartOf="@+id/imgGonder"
         app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        app:layout_constraintVertical_bias="0.853" />
+        app:layout_constraintVertical_bias="0.853"
+        android:orientation="vertical" />
 
     <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/shapeableImageView"
+        android:id="@+id/imgYatir"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="76dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="16dp"
         android:src="@drawable/baseline_add_circle_outline_24"
-        app:layout_constraintBottom_toTopOf="@+id/materialTextView4"
+        app:layout_constraintBottom_toTopOf="@+id/tvYatir"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imgDetay"
         app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        app:layout_constraintVertical_bias="0.935" />
+        app:layout_constraintVertical_bias="0.963" />
 
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/materialTextView4"
+        android:id="@+id/tvYatir"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/robotomedium"
         android:text="@string/textParayatir"
         android:textColor="@color/white"
-        android:textSize="20sp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/shapeableImageView"
-        app:layout_constraintStart_toStartOf="@+id/shapeableImageView" />
+        app:layout_constraintEnd_toEndOf="@+id/imgYatir"
+        app:layout_constraintStart_toStartOf="@+id/imgYatir" />
 
     <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/shapeableImageView3"
+        android:id="@+id/imgDetay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
         android:layout_marginTop="50dp"
-        android:layout_marginBottom="4dp"
+        android:layout_marginEnd="16dp"
         android:src="@drawable/baseline_account_balance_wallet_24"
-        app:layout_constraintBottom_toTopOf="@+id/materialTextView5"
-        app:layout_constraintEnd_toStartOf="@+id/shapeableImageView"
+        app:layout_constraintBottom_toTopOf="@+id/tvDetay"
+        app:layout_constraintEnd_toStartOf="@+id/imgYatir"
         app:layout_constraintHorizontal_bias="0.474"
-        app:layout_constraintStart_toEndOf="@+id/shapeableImageView2"
+        app:layout_constraintStart_toEndOf="@+id/imgGonder"
         app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        app:layout_constraintVertical_bias="0.965" />
+        app:layout_constraintVertical_bias="0.964" />
 
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/materialTextView5"
+        android:id="@+id/tvDetay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/robotomedium"
         android:text="@string/texthesaphareket"
         android:textColor="@color/white"
-        android:textSize="20sp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/shapeableImageView3"
-        app:layout_constraintStart_toStartOf="@+id/shapeableImageView3" />
+        app:layout_constraintEnd_toEndOf="@+id/imgDetay"
+        app:layout_constraintStart_toStartOf="@+id/imgDetay" />
 
     <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/shapeableImageView2"
+        android:id="@+id/imgGonder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="50dp"
+        android:layout_marginEnd="16dp"
         android:src="@drawable/send_svgrepo_com"
-        app:layout_constraintBottom_toTopOf="@+id/materialTextView6"
+        app:layout_constraintBottom_toTopOf="@+id/tvGonder"
+        app:layout_constraintEnd_toStartOf="@+id/imgDetay"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        app:layout_constraintVertical_bias="0.944" />
+        app:layout_constraintVertical_bias="0.964" />
 
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/materialTextView6"
+        android:id="@+id/tvGonder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/robotomedium"
         android:text="@string/textParagonder"
         android:textColor="@color/white"
-        android:textSize="20sp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/shapeableImageView2"
-        app:layout_constraintStart_toStartOf="@+id/shapeableImageView2" />
+        app:layout_constraintEnd_toEndOf="@+id/imgGonder"
+        app:layout_constraintStart_toStartOf="@+id/imgGonder" />
 </androidx.constraintlayout.widget.ConstraintLayout>
