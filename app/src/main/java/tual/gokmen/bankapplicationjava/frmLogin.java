@@ -1,6 +1,7 @@
 package tual.gokmen.bankapplicationjava;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -15,6 +16,7 @@ import com.google.android.material.textfield.TextInputLayout;
 import com.google.android.material.textview.MaterialTextView;
 
 import java.sql.Date;
+import java.sql.SQLException;
 import java.sql.Time;
 import java.time.LocalTime;
 import java.time.ZoneId;
@@ -30,6 +32,8 @@ public class frmLogin extends AppCompatActivity {
     private Button btn;
     private MaterialTextView textView;
     boolean deger = true;
+    private String tcno,parola;
+    private SqlConnection connection;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +42,7 @@ public class frmLogin extends AppCompatActivity {
         txtsifre.setVisibility(View.GONE);
         txtlayoutsifre.setVisibility(View.GONE);
         btn.setVisibility(View.GONE);
+        connection = new SqlConnection(getApplicationContext());
 
         clickFunc();
         getTime();
@@ -90,7 +95,6 @@ public class frmLogin extends AppCompatActivity {
         });
 
         btn.setOnClickListener(view ->{
-            startActivity(new Intent(getApplicationContext(),frmAnaMenu.class));
         });
     }
     private void getTime(){
@@ -111,4 +115,8 @@ public class frmLogin extends AppCompatActivity {
 
 
     }
+    private void setConnection(){
+    }
+
+
 }
