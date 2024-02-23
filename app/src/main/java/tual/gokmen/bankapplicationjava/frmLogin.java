@@ -16,6 +16,7 @@ import com.google.android.material.textfield.TextInputLayout;
 import com.google.android.material.textview.MaterialTextView;
 
 import java.sql.Date;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Time;
 import java.time.LocalTime;
@@ -34,6 +35,7 @@ public class frmLogin extends AppCompatActivity {
     boolean deger = true;
     private String tcno,parola;
     private SqlConnection connection;
+    public  String musteriID,musteriTC,musteriParola,musteriBakiye;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -94,7 +96,32 @@ public class frmLogin extends AppCompatActivity {
             }
         });
 
-        btn.setOnClickListener(view ->{
+        btn.setOnClickListener(view -> {
+            String tcNo = txttc.getText().toString();
+            String parola = txtsifre.getText().toString();
+
+            try {
+                if (connection.checkUser(tcNo, parola)) {
+                    Toast.makeText(getApplicationContext(), "Giriş başarılı", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getApplicationContext(), frmAnaMenu.class);
+                    checkUserFunc(tcNo,parola);
+                    startActivity(intent);
+                    intent.putExtra("musteriID",musteriID);
+                    intent.putExtra("musteriTC",musteriTC);
+                    intent.putExtra("musteriParola",musteriParola);
+                    intent.putExtra("musteriBakiye",musteriBakiye);
+                    startActivity(intent);
+                    frmLogin.this.overridePendingTransition(
+                            R.anim.animate_card_enter,
+                            R.anim.animate_card_exit
+                    );
+
+                } else {
+                    Toast.makeText(getApplicationContext(), "Giriş başarısız", Toast.LENGTH_SHORT).show();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         });
     }
     private void getTime(){
@@ -115,7 +142,23 @@ public class frmLogin extends AppCompatActivity {
 
 
     }
-    private void setConnection(){
+    private void checkUserFunc(String tc,String pass)  {
+        try {
+            ResultSet resultSet = connection.getUserInfo(tc,pass);
+
+            if (resultSet.next()){
+                musteriID = resultSet.getString("musteriID");
+                musteriTC = resultSet.getString("musteriTC");
+                musteriParola = resultSet.getString("musteriParola");
+                musteriBakiye = resultSet.getString("musteriBakiye");
+                String userInfo = "Müşteri ID: " + musteriID + "\nMüşteri TC: " + musteriTC + "\nMüşteri Parola: " + musteriParola + "\nMüşteri Bakiye: " + musteriBakiye;
+                Toast.makeText(this, userInfo, Toast.LENGTH_SHORT).show();
+
+            }
+        } catch (SQLException e) {
+            Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
+
     }
 
 
