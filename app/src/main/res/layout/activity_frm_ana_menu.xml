@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorTutorialBg"
-    android:padding="20dp"
+
     tools:context=".frmAnaMenu">
 
     <com.google.android.material.textview.MaterialTextView
@@ -16,8 +16,7 @@
         android:fontFamily="@font/robotomedium"
         android:text="@string/textBalance"
         android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="30sp"
+        android:textColor="@color/white"        android:textSize="30sp"
         app:autoSizeMaxTextSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/imageView3"
         app:layout_constraintEnd_toEndOf="parent"
@@ -75,96 +74,91 @@
         app:layout_constraintStart_toStartOf="@+id/tvBakiye"
         app:layout_constraintTop_toBottomOf="@+id/tvBakiye" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginTop="50dp"
-        android:background="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/imgDetay"
-        app:layout_constraintEnd_toEndOf="@+id/imgYatir"
-        app:layout_constraintHorizontal_bias="0.406"
-        app:layout_constraintStart_toStartOf="@+id/imgGonder"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        app:layout_constraintVertical_bias="0.853"
-        android:orientation="vertical" />
-
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/imgYatir"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="16dp"
-        android:src="@drawable/baseline_add_circle_outline_24"
-        app:layout_constraintBottom_toTopOf="@+id/tvYatir"
+        android:background="@drawable/conslayoutbgg"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imgDetay"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        app:layout_constraintVertical_bias="0.963" />
-
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tvYatir"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/robotomedium"
-        android:text="@string/textParayatir"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/imgYatir"
-        app:layout_constraintStart_toStartOf="@+id/imgYatir" />
-
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/imgDetay"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="16dp"
-        android:src="@drawable/baseline_account_balance_wallet_24"
-        app:layout_constraintBottom_toTopOf="@+id/tvDetay"
-        app:layout_constraintEnd_toStartOf="@+id/imgYatir"
-        app:layout_constraintHorizontal_bias="0.474"
-        app:layout_constraintStart_toEndOf="@+id/imgGonder"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        app:layout_constraintVertical_bias="0.964" />
-
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tvDetay"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/robotomedium"
-        android:text="@string/texthesaphareket"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/imgDetay"
-        app:layout_constraintStart_toStartOf="@+id/imgDetay" />
-
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/imgGonder"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="16dp"
-        android:src="@drawable/send_svgrepo_com"
-        app:layout_constraintBottom_toTopOf="@+id/tvGonder"
-        app:layout_constraintEnd_toStartOf="@+id/imgDetay"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        app:layout_constraintVertical_bias="0.964" />
+        app:layout_constraintTop_toBottomOf="@+id/materialTextView3"
+        app:layout_constraintVertical_bias="1.0">
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tvGonder"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/robotomedium"
-        android:text="@string/textParagonder"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/imgGonder"
-        app:layout_constraintStart_toStartOf="@+id/imgGonder" />
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imgYatir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="72dp"
+            android:src="@drawable/baseline_add_circle_outline_24"
+            app:layout_constraintBottom_toTopOf="@+id/tvYatir"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvYatir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/robotomedium"
+            android:text="@string/textParayatir"
+            android:textColor="@color/colorTutorialBg"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/imgYatir"
+            app:layout_constraintStart_toStartOf="@+id/imgYatir" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imgDetay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="68dp"
+            android:src="@drawable/baseline_account_balance_wallet_24"
+            app:layout_constraintBottom_toTopOf="@+id/tvDetay"
+            app:layout_constraintEnd_toStartOf="@+id/imgYatir"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvDetay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/robotomedium"
+            android:text="@string/texthesaphareket"
+            android:textColor="@color/colorTutorialBg"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/imgDetay"
+            app:layout_constraintStart_toStartOf="@+id/imgDetay" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imgGonder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/send_svgrepo_com"
+            app:layout_constraintBottom_toTopOf="@+id/tvGonder"
+            app:layout_constraintEnd_toStartOf="@+id/imgDetay"
+            app:layout_constraintHorizontal_bias="0.038"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvGonder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/robotomedium"
+            android:text="@string/textParagonder"
+            android:textColor="@color/colorTutorialBg"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/imgGonder"
+            app:layout_constraintStart_toStartOf="@+id/imgGonder" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

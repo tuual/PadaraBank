@@ -35,11 +35,19 @@ import javax.xml.transform.Result;
             String connectionUrl = null;
 
             try {
+
+
                 Class.forName("net.sourceforge.jtds.jdbc.Driver");
                 connectionUrl = "jdbc:jtds:sqlserver://" + ip + ":" + port + ";" + "databasename=" + database + ";user=" + username + ";password=" + password + ";";
                 connection = DriverManager.getConnection(connectionUrl);
-                Toast.makeText(context, "Bağlandı", Toast.LENGTH_SHORT).show();
-            } catch (Exception e) {
+                if (connection !=null){
+                    Toast.makeText(context, "Bağlandı", Toast.LENGTH_SHORT).show();
+
+                }
+                else{
+                    Toast.makeText(context, "Bağlanılamadı", Toast.LENGTH_SHORT).show();
+                }
+            } catch (SQLException | ClassNotFoundException e) {
                 Log.i("VeriTabanıHatası", e.getMessage());
             }
         }
