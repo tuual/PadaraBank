@@ -16,6 +16,9 @@
         android:theme="@style/Theme.BankApplicationJava"
         tools:targetApi="31">
         <activity
+            android:name=".frmParaGonderilldi"
+            android:exported="false" />
+        <activity
             android:name=".frmDetayActivity"
             android:exported="false" />
         <activity

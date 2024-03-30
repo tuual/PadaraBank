@@ -41,11 +41,9 @@ import javax.xml.transform.Result;
                 connectionUrl = "jdbc:jtds:sqlserver://" + ip + ":" + port + ";" + "databasename=" + database + ";user=" + username + ";password=" + password + ";";
                 connection = DriverManager.getConnection(connectionUrl);
                 if (connection !=null){
-                    Toast.makeText(context, "Bağlandı", Toast.LENGTH_SHORT).show();
 
                 }
                 else{
-                    Toast.makeText(context, "Bağlanılamadı", Toast.LENGTH_SHORT).show();
                 }
             } catch (SQLException | ClassNotFoundException e) {
                 Log.i("VeriTabanıHatası", e.getMessage());
@@ -56,7 +54,6 @@ import javax.xml.transform.Result;
             try {
                 st = connection.createStatement();
                 st.executeUpdate(query);
-                Toast.makeText(cont, "bağlandı", Toast.LENGTH_SHORT).show();
             } catch (SQLException ex) {
                 throw new SQLException(ex);
             }
@@ -94,6 +91,20 @@ import javax.xml.transform.Result;
                 e.printStackTrace();
                 throw e;
             }
+        }
+
+        public String getCustomerBalanceByID(String customerID) {
+            try {
+                String query = "SELECT musteriBakiye FROM musteri WHERE musteriID='" + customerID + "'";
+                Statement statement = connection.createStatement();
+                ResultSet resultSet = statement.executeQuery(query);
+                if (resultSet.next()) {
+                    return resultSet.getString("musteriBakiye");
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            return null;
         }
     }
 

@@ -2,6 +2,7 @@ package tual.gokmen.bankapplicationjava;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -64,26 +65,36 @@ public class frmParaGonderme extends AppCompatActivity {
                 // Uyarı mesajı
                 Toast.makeText(this, "Bakiyenizin üstü bir para gönderilemez.", Toast.LENGTH_SHORT).show();
             } else {
-                if (idChecked(id)){
-                    paratransferi(id);
-                    toplamGonderilecekPara = Integer.parseInt(DbGelenBakiye) + bakiye;
-                    //Gönderilecek para
-                    String query1 = "UPDATE musteri SET musteriBakiye='" + toplamGonderilecekPara + "' WHERE musteriID='" + id + "'";
-                    Statement statement = connection.connection.createStatement();
-                    statement.executeUpdate(query1);
+                if (idChecked(id)) {
+                    if (!hesapID.equals(id)) {
+                        paratransferi(id);
+                        toplamGonderilecekPara = Integer.parseInt(DbGelenBakiye) + bakiye;
+                        //Gönderilecek para
+                        String query1 = "UPDATE musteri SET musteriBakiye='" + toplamGonderilecekPara + "' WHERE musteriID='" + id + "'";
+                        Statement statement = connection.connection.createStatement();
+                        statement.executeUpdate(query1);
 
-                    // Hesap bakiyesini güncelleme
-                    int sonpara = bakiyeyeni - bakiye;
-                    String query2 = "UPDATE musteri SET musteriBakiye='" + sonpara + "' WHERE musteriID='" + hesapID + "'";
-                    statement.executeUpdate(query2);
+                        // Hesap bakiyesini güncelleme
+                        int sonpara = bakiyeyeni - bakiye;
+                        String query2 = "UPDATE musteri SET musteriBakiye='" + sonpara + "' WHERE musteriID='" + hesapID + "'";
+                        statement.executeUpdate(query2);
 
-                    //Bakiye kaydetme
-                    editor = sharedPreferences.edit();
-                    editor.putString("hesapBakiye", String.valueOf(sonpara));
-                    editor.apply();
+                        //Bakiye kaydetme
+                        editor = sharedPreferences.edit();
+                        editor.putString("hesapBakiye", String.valueOf(sonpara));
+                        editor.apply();
 
 
-                    Toast.makeText(this, "Para Gönderildi", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(this, frmParaGonderilldi.class));
+                        frmParaGonderme.this.overridePendingTransition(
+                                R.anim.animate_card_enter,
+                                R.anim.animate_card_exit
+                        );
+                        finish();
+                    }
+                    else{
+                        Toast.makeText(this, "Kendinize Para Gönderemezsiniz.", Toast.LENGTH_SHORT).show();
+                    }
                 }
                 else{
                     Toast.makeText(this, "Böyle bir padara numarası yok.", Toast.LENGTH_SHORT).show();

@@ -17,4 +17,9 @@
     <string name="textpadarano">Padara Numaran:</string>
     <string name="buttonText3">Gönder</string>
     <string name="checkboxtext">Beni Hatırla</string>
+    <string name="kullanablrbakiye">Kullanılabilir Bakiye</string>
+    <string name="hesaptext">Hesaplarım</string>
+    <string name="kartlartext">Kartlarım</string>
+    <string name="buttonText4">Devam Et</string>
+    <string name="paraislem">Para Gönderme İşlemi Başarılı</string>
 </resources>
